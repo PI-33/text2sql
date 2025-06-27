@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  data-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: loreal-data-agent
+    ports:
+      - "7860:7860"  # 将容器内的7860端口映射到主机
+    env_file:
+      - .env         # 加载 API_KEY 和 BASE_URL
+    volumes:
+      - ./data:/app/data   # 挂载本地 data 文件夹（含 SQLite 数据库）
+    restart: always
