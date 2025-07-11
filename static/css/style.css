@@ -1,0 +1,107 @@
+/* L'Oréal 品牌色彩定义 - 支持主题切换 */
+:root {
+    --loreal-gold: #D4AF37;
+    --loreal-dark-gold: #B8941F;
+    --loreal-hover: #E6C55A;
+    --loreal-black: #1A1A1A;
+    --loreal-dark-gray: #2D2D2D;
+    --loreal-light-gray: #F5F5F5;
+    --loreal-white: #FFFFFF;
+    --loreal-accent: #8B4513;
+
+    /* Light主题默认颜色 */
+    --text-primary: #1A1A1A;
+    --text-secondary: #2D2D2D;
+    --text-muted: #666666;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --border-color: #E0E0E0;
+}
+
+/* Dark模式适配 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #F5F5F5;
+        --text-secondary: #CCCCCC;
+        --text-muted: #B0B0B0;
+        --bg-primary: #1E1E1E;
+        --bg-secondary: #2A2A2A;
+        --border-color: #404040;
+    }
+}
+
+/* Gradio dark主题检测 */
+.dark :root {
+    --text-primary: #F5F5F5;
+    --text-secondary: #CCCCCC;
+    --text-muted: #B0B0B0;
+    --bg-primary: #1E1E1E;
+    --bg-secondary: #2A2A2A;
+    --border-color: #404040;
+}
+
+/* 全局样式 */
+.gradio-container {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif !important;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 文本元素样式 */
+.gradio-container label,
+.gradio-container .gr-form label,
+.gradio-container .gr-box label,
+.gradio-container h1, .gradio-container h2, .gradio-container h3, .gradio-container h4,
+.gradio-container p, .gradio-container span, .gradio-container div {
+    color: var(--text-primary) !important;
+}
+
+/* 主要组件样式 */
+.main-header {
+    background: linear-gradient(135deg, var(--loreal-black) 0%, var(--loreal-dark-gray) 50%, var(--loreal-gold) 100%);
+    color: var(--loreal-white);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+}
+
+.feature-card {
+    background: linear-gradient(145deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-radius: 12px;
+    padding: 1.2rem;
+    border: 1px solid var(--loreal-gold);
+    transition: all 0.3s ease;
+}
+
+.chatbot {
+    border: 2px solid var(--loreal-gold) !important;
+    border-radius: 16px !important;
+    background: var(--bg-primary) !important;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background: linear-gradient(135deg, var(--loreal-gold) 0%, var(--loreal-dark-gold) 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: var(--loreal-black) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 2rem !important;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--text-secondary) 100%) !important;
+    border: 2px solid var(--loreal-gold) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-header { padding: 1rem; }
+    .feature-card { padding: 1rem; }
+    .btn-primary, .btn-secondary { padding: 0.6rem 1.5rem !important; }
+}
